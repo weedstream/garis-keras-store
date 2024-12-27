@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-extrabold text-white">Visit Our Location</h2>
-            <p class="mt-4 text-lg text-gray-500">Here is our store to visit.</p>
+            {{-- <p class="mt-4 text-lg text-gray-500">Here is our store to visit.</p> --}}
         </div>
         <div class="mt-16 lg:mt-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -36,13 +36,13 @@
                                 <i class="fas fa-phone-alt mr-2"></i>Contact
                             </h3>
                             <p class="mt-1 text-gray-200">
-                                <i class="fas fa-envelope mr-2"></i>Email: lbesmerch@gmail.com
+                                <i class="fas fa-envelope mr-2"></i>Email: garskestore@gmail.com
                             </p>
                             <p class="mt-1 text-gray-200">
-                                <i class="fas fa-phone mr-2"></i>Phone: 08996667797
+                                <i class="fas fa-phone mr-2"></i>Phone: +62 899-6667-797
                             </p>
                             <p class="mt-1 text-gray-200">
-                                <i class="fab fa-instagram mr-2"></i>Instagram: @lbs.merch
+                                <i class="fab fa-instagram mr-2"></i>Instagram: @gariskeras.store
                             </p>
                         </div>
                     </div>
