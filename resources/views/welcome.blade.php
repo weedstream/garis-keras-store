@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Produk Kami</title>
+    <title>Garis Keras Store</title>
+    <link rel="icon" href="{{ asset('img/kkk.jpg') }}" type="image/png">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/npm/@aminerm/hot-toast@2.0.0/dist/index.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -43,17 +44,17 @@
                 @endforeach
             </div>
         </section>
-        
+
         <!-- Modal Produk -->
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" 
-            x-show="showModal" 
-            x-transition:enter="transition ease-out duration-300" 
-            x-transition:enter-start="opacity-0 scale-90" 
-            x-transition:enter-end="opacity-100 scale-100" 
-            x-transition:leave="transition ease-in duration-300" 
-            x-transition:leave-start="opacity-100 scale-100" 
-            x-transition:leave-end="opacity-0 scale-90" 
-            style="display: none;" 
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            x-show="showModal"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90"
+            style="display: none;"
             x-data="{ currentIndex: 0 }">
 
             <div class="relative bg-white rounded-lg shadow-2xl p-8 max-w-3xl w-full font-sans">
@@ -70,18 +71,18 @@
                             <div>
                                 <!-- Main Image -->
                                 <div class="mb-4">
-                                    <img :src="'/storage/' + JSON.parse(selectedProduct.images)[currentIndex]" 
-                                        alt="Gambar Produk" 
+                                    <img :src="'/storage/' + JSON.parse(selectedProduct.images)[currentIndex]"
+                                        alt="Gambar Produk"
                                         class="h-64 w-full object-cover rounded-lg border border-gray-300 shadow-sm">
                                 </div>
 
                                 <!-- Image Preview -->
                                 <div class="flex gap-2">
                                     <template x-for="(image, index) in JSON.parse(selectedProduct.images)" :key="index">
-                                        <img :src="'/storage/' + image" 
-                                            alt="Preview" 
-                                            class="h-16 w-16 object-cover rounded-lg border cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out" 
-                                            :class="{ 'border-blue-500 shadow-lg': index === currentIndex }" 
+                                        <img :src="'/storage/' + image"
+                                            alt="Preview"
+                                            class="h-16 w-16 object-cover rounded-lg border cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out"
+                                            :class="{ 'border-blue-500 shadow-lg': index === currentIndex }"
                                             @click="currentIndex = index">
                                     </template>
                                 </div>
@@ -91,28 +92,28 @@
                             Tidak ada gambar untuk produk ini.
                         </p>
                     </div>
-                    
+
                     <!-- Detail Section -->
                     <div class="lg:ml-6 lg:w-1/2">
-                        <h3 class="text-2xl font-extrabold text-gray-800 mb-4" 
-                        style="font-family: 'Poppins', sans-serif;" 
+                        <h3 class="text-2xl font-extrabold text-gray-800 mb-4"
+                        style="font-family: 'Poppins', sans-serif;"
                         x-text="selectedProduct.name"></h3>
-                        <p class="text-sm text-gray-600 mb-4" 
+                        <p class="text-sm text-gray-600 mb-4"
                         style="font-family: 'Inter', sans-serif;">
                         <strong>Ukuran:</strong> <span x-text="selectedProduct.size || 'Tidak tersedia'"></span>
                     </p>
-                        <p class="text-gray-600 mb-4 leading-relaxed text-sm" 
-                        style="font-family: 'Inter', sans-serif;" 
+                        <p class="text-gray-600 mb-4 leading-relaxed text-sm"
+                        style="font-family: 'Inter', sans-serif;"
                         x-text="selectedProduct.description || 'Tidak ada deskripsi produk.'"></p>
-                        <p class="text-lg font-bold text-green-600 mb-4" 
+                        <p class="text-lg font-bold text-green-600 mb-4"
                         style="font-family: 'Poppins', sans-serif;">
                         Harga: Rp <span x-text="new Intl.NumberFormat('id-ID').format(selectedProduct.discounted_price || selectedProduct.price)"></span>
                     </p>
-                    
-                    
 
-                        <button class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all duration-300 text-lg font-semibold shadow-md focus:outline-none" 
-                            style="font-family: 'Poppins', sans-serif;" 
+
+
+                        <button class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all duration-300 text-lg font-semibold shadow-md focus:outline-none"
+                            style="font-family: 'Poppins', sans-serif;"
                             @click="showModal = false; showReceipt = true; receiptData = { name: selectedProduct.name, price: selectedProduct.discounted_price || selectedProduct.price }">
                             Check Out
                         </button>
@@ -134,30 +135,30 @@
         </style>
 
         <!-- Modal Struk -->
-        <div 
-            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" 
-            x-show="showReceipt" 
-            x-transition:enter="transition ease-out duration-300" 
-            x-transition:enter-start="opacity-0 scale-90" 
-            x-transition:enter-end="opacity-100 scale-100" 
-            x-transition:leave="transition ease-in duration-300" 
-            x-transition:leave-start="opacity-100 scale-100" 
-            x-transition:leave-end="opacity-0 scale-90" 
+        <div
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            x-show="showReceipt"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90"
             style="display: none;">
             <div class="relative bg-white rounded-lg shadow-2xl p-6 w-full max-w-md text-gray-800">
-                <button 
-                    class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold focus:outline-none" 
+                <button
+                    class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold focus:outline-none"
                     @click="showReceipt = false">
                     &times;
                 </button>
-                
+
                 <!-- Receipt Content -->
                 <div id="receipt-content" class="w-full">
                     <!-- Header Struk -->
                     <div class="text-center border-b-2 border-gray-300 pb-4">
                         <h1 class="text-2xl font-bold text-gray-700">Garis Keras Store</h1>
-                        <p class="text-sm text-gray-600">Jl. Merpati No. 123, Pemalang</p>
-                        <p class="text-sm text-gray-600">Telp: 0812-3456-7890</p>
+                        <p class="text-sm text-gray-600">Jl. Krakatau No.122, Wanarejan Selatan, Wanarejan Sel., Kec. Taman, Kabupaten Pemalang, Jawa Tengah 52361</p>
+                        <p class="text-sm text-gray-600">Phone: +62 899-6667-797</p>
                     </div>
 
                     <!-- Informasi Transaksi -->
@@ -193,6 +194,9 @@
                             </tr>
                         </tfoot>
                     </table>
+                    {{-- api for qrcode --}}
+                    <div class="text-center mt-4">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ route('home') }}" alt="QR Code" class="mx-auto">
 
                     <!-- Pesan Terima Kasih -->
                     <div class="mt-6 text-center border-t-2 border-gray-300 pt-4 text-gray-600">
@@ -203,7 +207,7 @@
 
                     <!-- Tombol Cetak -->
                     <div class="mt-6 text-center">
-                        <button 
+                        <button
                             class="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300"
                             onclick="printReceipt()">
                             Cetak Struk

@@ -32,6 +32,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('testimonials', TestimonialController::class);
 });
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
+
 
 
 require __DIR__.'/auth.php';

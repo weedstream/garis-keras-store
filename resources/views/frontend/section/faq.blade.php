@@ -24,7 +24,7 @@
                         <details>
                             <summary class="py-2 outline-none cursor-pointer focus:underline">Can I return a product if I'm not satisfied?</summary>
                             <div class="px-4 pb-4">
-                                <p>Yes, we have a hassle-free return policy. If you are not satisfied with your purchase, you can initiate a return within 30 days of receiving the product. Please contact our customer support at <a href="" class="underline">example@gmail.com</a> for assistance. </p>
+                                <p>Yes, we have a hassle-free return policy. If you are not satisfied with your purchase, you can initiate a return within 30 days of receiving the product. Please contact our customer support at <a href="" class="underline">garskestore@gmail.com</a> for assistance. </p>
                             </div>
                         </details>
                         <details>
@@ -36,7 +36,7 @@
                         <details>
                             <summary class="py-2 outline-none cursor-pointer focus:underline">What is your customer support contact?</summary>
                             <div class="px-4 pb-4">
-                                <p>If you have any questions, concerns, or need assistance, you can reach our customer support team at 9911083755 during our business hours, Monday to Saturday from 10 am to 6 pm. You can also contact us via email at <a href="" class="underline">example@gmail.com</a>. </p>
+                                <p>If you have any questions, concerns, or need assistance, you can reach our customer support team at 9911083755 during our business hours, Monday to Saturday from 10 am to 6 pm. You can also contact us via email at <a href="" class="underline">garskestore@gmail.com</a>. </p>
                             </div>
                         </details>
                         <details>

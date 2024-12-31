@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class ProductController extends Controller
 {
@@ -153,5 +154,24 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil dihapus.');
+    }
+
+    public function generateReceipt(Product $product)
+    {
+        // Data untuk QR code
+        $qrData = [
+            'product' => $product->name,
+            'price' => $product->discounted_price ?? $product->price,
+            'date' => now()->format('Y-m-d H:i:s'),
+        ];
+
+        // Generate QR code
+        $qrCode = QrCode::size(200)->generate(json_encode($qrData));
+
+        // Kirim data ke view
+        return view('products.receipt', [
+            'product' => $product,
+            'qrCode' => $qrCode,
+        ]);
     }
 }
