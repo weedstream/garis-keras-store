@@ -69,6 +69,7 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+          auth-type: SERVICE_PRINCIPAL
           # client-id: ${{ secrets.__clientidsecretname__ }}
           # tenant-id: ${{ secrets.__tenantidsecretname__ }}
           # subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
