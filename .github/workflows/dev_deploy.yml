@@ -65,12 +65,13 @@ jobs:
       - name: Unzip artifact
         run: unzip release.zip
       
-      # - name: Login to Azure
-      #   uses: azure/login@v1
-      #   with:
-      #     client-id: ${{ secrets.__clientidsecretname__ }}
-      #     tenant-id: ${{ secrets.__tenantidsecretname__ }}
-      #     subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          # client-id: ${{ secrets.__clientidsecretname__ }}
+          # tenant-id: ${{ secrets.__tenantidsecretname__ }}
+          # subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
