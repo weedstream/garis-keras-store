@@ -68,11 +68,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
           auth-type: SERVICE_PRINCIPAL
-          # client-id: ${{ secrets.__clientidsecretname__ }}
-          # tenant-id: ${{ secrets.__tenantidsecretname__ }}
-          # subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
+          enable-AzPSSession: false
+          environment: azurecloud
+          allow-no-subscriptions: false
+          audience: api://AzureADTokenExchange
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
