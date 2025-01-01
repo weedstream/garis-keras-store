@@ -78,5 +78,5 @@ jobs:
         with:
           app-name: 'gariskeras'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1jHz1Y8D0rsesE16hvkaqg0dBZnANxgh3Yx66KzhDLsG9Q0xFlQtbeWlnwf6 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
           package: .
