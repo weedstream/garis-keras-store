@@ -36,7 +36,10 @@ jobs:
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
       - name: Zip the application files
-        run: zip -r php-app.zip .
+        run: zip -r release.zip .
+
+      - name: Verify zip file
+        run: ls -lh release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
